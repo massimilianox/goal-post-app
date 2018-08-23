@@ -17,6 +17,7 @@
 		3B2776AE212DFB230072F0E7 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2776AD212DFB230072F0E7 /* GoalType.swift */; };
 		3B2776B0212E071F0072F0E7 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2776AF212E071F0072F0E7 /* CreateGoalVC.swift */; };
 		3B2776B6212ED2700072F0E7 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2776B5212ED2700072F0E7 /* UIViewControllerExt.swift */; };
+		3B2776BA212EE2EC0072F0E7 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2776B9212EE2EC0072F0E7 /* UIButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3B2776AD212DFB230072F0E7 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		3B2776AF212E071F0072F0E7 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		3B2776B5212ED2700072F0E7 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		3B2776B9212EE2EC0072F0E7 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				3B2776B5212ED2700072F0E7 /* UIViewControllerExt.swift */,
+				3B2776B9212EE2EC0072F0E7 /* UIButtonExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				3B0A5CFD212DC5A200B834A3 /* TableGoalCell.swift in Sources */,
 				3B0A5CE6212D930700B834A3 /* GoalsVC.swift in Sources */,
 				3B2776B6212ED2700072F0E7 /* UIViewControllerExt.swift in Sources */,
+				3B2776BA212EE2EC0072F0E7 /* UIButtonExt.swift in Sources */,
 				3B0A5CE4212D930700B834A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

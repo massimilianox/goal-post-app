@@ -183,7 +183,7 @@
         <!--Create GoalVC-->
         <scene sceneID="ZlH-dG-9Tx">
             <objects>
-                <viewController storyboardIdentifier="createGoalVC" id="2t2-Hy-0Nl" customClass="CreateGoalVC" customModule="GoalPostApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createGoalVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2t2-Hy-0Nl" customClass="CreateGoalVC" customModule="GoalPostApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ymy-Pk-biy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
-                                            <action selector="backBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="r9M-VE-ZcH"/>
+                                            <action selector="backBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="tlO-5B-uSN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -247,13 +247,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89X-ss-KzX">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="35"/>
-                                        <color key="backgroundColor" red="0.43137254899999999" green="0.72941176470000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.43137254899999999" green="0.72941176470000002" blue="0.81960784310000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                         <state key="normal" title="Short Term">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="shortTermBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="5pE-sT-Bbo"/>
+                                            <action selector="shortTermBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="y9H-9D-sPo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyh-Yo-D29">
@@ -264,7 +264,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="longTermBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="8Fh-e4-PNZ"/>
+                                            <action selector="longTermBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="YCR-pe-8x7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -283,7 +283,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="iw4-x9-Ixe"/>
+                                    <action selector="nextBtnPressed:" destination="2t2-Hy-0Nl" eventType="touchUpInside" id="HCf-KW-S0S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,9 +308,11 @@
                     </view>
                     <connections>
                         <outlet property="goalDescription" destination="vuU-NZ-Wwm" id="HFa-7r-qPl"/>
-                        <outlet property="longTermBtn" destination="Fyh-Yo-D29" id="eG9-zk-ujZ"/>
-                        <outlet property="nextBtn" destination="rfl-We-31E" id="fGc-jU-tQM"/>
-                        <outlet property="shortTermBtn" destination="89X-ss-KzX" id="rvk-Aq-fkJ"/>
+                        <outlet property="goalDescriptionTxtHeightConstraint" destination="9MT-sZ-f4u" id="6EC-hg-FaG"/>
+                        <outlet property="longTermBtn" destination="Fyh-Yo-D29" id="hIF-fW-RZt"/>
+                        <outlet property="nextBtn" destination="rfl-We-31E" id="Myh-fz-DLS"/>
+                        <outlet property="nextBtnHeightConstraint" destination="Wun-E1-aLy" id="U8l-hG-tJQ"/>
+                        <outlet property="shortTermBtn" destination="89X-ss-KzX" id="dra-Vp-fLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmm-dH-0Zl" userLabel="First Responder" sceneMemberID="firstResponder"/>
