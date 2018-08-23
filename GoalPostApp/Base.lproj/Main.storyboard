@@ -233,17 +233,34 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What is your goal?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-NZ-Wwm">
-                                <rect key="frame" x="13" y="73" width="294" height="160"/>
+                                <rect key="frame" x="13" y="73" width="294" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="9MT-sZ-f4u"/>
+                                    <constraint firstAttribute="height" constant="150" id="9MT-sZ-f4u"/>
                                 </constraints>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="CHl-k8-bdM">
+                                <rect key="frame" x="13" y="253" width="294" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many points to complete?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmb-DO-mFZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKq-Tn-GiV">
+                                        <rect key="frame" x="235" y="0.0" width="59" height="30"/>
+                                        <color key="textColor" red="0.43137254899999999" green="0.72941176470000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-rE-xnc">
-                                <rect key="frame" x="12.5" y="278" width="294" height="35"/>
+                                <rect key="frame" x="12.5" y="313" width="294" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89X-ss-KzX">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="35"/>
@@ -279,7 +296,7 @@
                                     <constraint firstAttribute="height" constant="35" id="8A5-OG-kLU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="Create a Goal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -292,14 +309,17 @@
                             <constraint firstItem="EHe-iA-9Ya" firstAttribute="trailing" secondItem="vuU-NZ-Wwm" secondAttribute="trailing" constant="13" id="2aJ-D4-vFX"/>
                             <constraint firstItem="EHe-iA-9Ya" firstAttribute="trailing" secondItem="rfl-We-31E" secondAttribute="trailing" id="7fz-Xu-qL2"/>
                             <constraint firstItem="XgM-PU-phW" firstAttribute="trailing" secondItem="EHe-iA-9Ya" secondAttribute="trailing" id="9dh-we-mw0"/>
+                            <constraint firstItem="sWE-rE-xnc" firstAttribute="top" secondItem="CHl-k8-bdM" secondAttribute="bottom" constant="30" id="Blb-eL-SnU"/>
+                            <constraint firstItem="CHl-k8-bdM" firstAttribute="leading" secondItem="EHe-iA-9Ya" secondAttribute="leading" constant="13" id="DdZ-vx-dGw"/>
                             <constraint firstItem="rfl-We-31E" firstAttribute="leading" secondItem="EHe-iA-9Ya" secondAttribute="leading" id="Gso-us-0fQ"/>
-                            <constraint firstItem="sWE-rE-xnc" firstAttribute="top" secondItem="vuU-NZ-Wwm" secondAttribute="bottom" constant="45" id="NBa-ly-qKw"/>
+                            <constraint firstItem="CHl-k8-bdM" firstAttribute="top" secondItem="vuU-NZ-Wwm" secondAttribute="bottom" constant="30" id="JBp-8d-Ft9"/>
                             <constraint firstItem="EHe-iA-9Ya" firstAttribute="trailing" secondItem="sWE-rE-xnc" secondAttribute="trailing" constant="13" id="Nk3-Mo-q2a"/>
                             <constraint firstItem="XgM-PU-phW" firstAttribute="leading" secondItem="EHe-iA-9Ya" secondAttribute="leading" id="R6t-8j-VH6"/>
                             <constraint firstItem="rfl-We-31E" firstAttribute="bottom" secondItem="EHe-iA-9Ya" secondAttribute="bottom" id="Wun-E1-aLy"/>
                             <constraint firstItem="vuU-NZ-Wwm" firstAttribute="top" secondItem="XgM-PU-phW" secondAttribute="bottom" constant="8" symbolic="YES" id="eCb-KJ-lsE"/>
                             <constraint firstItem="sWE-rE-xnc" firstAttribute="centerX" secondItem="Ymy-Pk-biy" secondAttribute="centerX" id="hJC-hm-UQO"/>
                             <constraint firstItem="XgM-PU-phW" firstAttribute="top" secondItem="Ymy-Pk-biy" secondAttribute="top" id="krM-JF-ZXY"/>
+                            <constraint firstItem="EHe-iA-9Ya" firstAttribute="trailing" secondItem="CHl-k8-bdM" secondAttribute="trailing" constant="13" id="tlb-u1-fuq"/>
                             <constraint firstItem="vuU-NZ-Wwm" firstAttribute="centerX" secondItem="XgM-PU-phW" secondAttribute="centerX" id="vZV-5r-U9J"/>
                             <constraint firstItem="sWE-rE-xnc" firstAttribute="leading" secondItem="EHe-iA-9Ya" secondAttribute="leading" constant="13" id="vwt-lk-SIO"/>
                             <constraint firstItem="vuU-NZ-Wwm" firstAttribute="leading" secondItem="EHe-iA-9Ya" secondAttribute="leading" constant="13" id="zAO-Ct-a7g"/>
@@ -309,6 +329,7 @@
                     <connections>
                         <outlet property="goalDescription" destination="vuU-NZ-Wwm" id="HFa-7r-qPl"/>
                         <outlet property="goalDescriptionTxtHeightConstraint" destination="9MT-sZ-f4u" id="6EC-hg-FaG"/>
+                        <outlet property="goalPointsTxtField" destination="YKq-Tn-GiV" id="rtA-mH-e9I"/>
                         <outlet property="longTermBtn" destination="Fyh-Yo-D29" id="hIF-fW-RZt"/>
                         <outlet property="nextBtn" destination="rfl-We-31E" id="Myh-fz-DLS"/>
                         <outlet property="nextBtnHeightConstraint" destination="Wun-E1-aLy" id="U8l-hG-tJQ"/>
