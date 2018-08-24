@@ -13,7 +13,7 @@ class GoalsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var goals: [Any] = []
+    var goals: [Goal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,14 +59,17 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    // Abiliate default behaviour for edit cells
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    // To use custom style
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .none
     }
     
+    // Set actions for table row
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
             self.removeGoal(forIndexPath: indexPath)
@@ -90,10 +93,32 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             self.setProgress(forGoalAtIndexPath: indexPath)
             self.fetchData(completion: { (success) in
                 if success {
-                    self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                    self.tableView.reloadRows(at: [indexPath], with: .right)
+
+                    // Remove automatically a goal after completion, not sure about that
+                    let goal = self.goals[indexPath.row]
+                    if goal.goalProgress >= goal.goalValue {
+                        self.removeGoal(forIndexPath: indexPath)
+                        self.fetchData(completion: { (success) in
+                            if success {
+                                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                                if self.goals.count > 0 {
+                                    self.tableView.isHidden = false
+                                } else {
+                                    self.tableView.isHidden = true
+                                }
+                            } else {
+                                print("something went terribly wrong")
+                            }
+                        })
+                    }
+                } else {
+                    print("something went terribly wrong")
                 }
             })
         }
+        
+        progress.backgroundColor = #colorLiteral(red: 0.4973257184, green: 0.7762238383, blue: 0.8543422818, alpha: 1)
         
         
         return [delete, progress]
@@ -106,7 +131,7 @@ extension GoalsVC {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let manageContext = delegate.persistentContainer.viewContext
         
-        guard let goal = goals[indexPath.row] as? Goal else { return }
+        let goal = goals[indexPath.row]
         if goal.goalProgress < goal.goalValue {
             goal.goalProgress += 1
         } else {
