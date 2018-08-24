@@ -138,18 +138,39 @@
                                                     <color key="textColor" red="0.43137254899999999" green="0.72941176470000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yxa-88-Flr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyR-n9-6Mh">
+                                                            <rect key="frame" x="91" y="12" width="138.5" height="24"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.43137254899999999" green="0.72941176470000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="QyR-n9-6Mh" firstAttribute="centerX" secondItem="Yxa-88-Flr" secondAttribute="centerX" id="56D-me-sgt"/>
+                                                        <constraint firstItem="QyR-n9-6Mh" firstAttribute="centerY" secondItem="Yxa-88-Flr" secondAttribute="centerY" id="Jky-q9-RVr"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="q6d-E9-c6e" secondAttribute="trailing" constant="9" id="5Hs-tN-kft"/>
                                                 <constraint firstAttribute="bottom" secondItem="q6d-E9-c6e" secondAttribute="bottom" constant="5" id="MwN-1r-Kce"/>
                                                 <constraint firstItem="G0c-SS-CyU" firstAttribute="leading" secondItem="0fd-ja-GZB" secondAttribute="leading" constant="13" id="Nyi-nO-h6x"/>
+                                                <constraint firstItem="Yxa-88-Flr" firstAttribute="leading" secondItem="0fd-ja-GZB" secondAttribute="leading" id="OBj-vy-BTq"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yxa-88-Flr" secondAttribute="bottom" id="R76-ER-gah"/>
+                                                <constraint firstItem="Yxa-88-Flr" firstAttribute="top" secondItem="0fd-ja-GZB" secondAttribute="top" id="TT6-Kg-rMr"/>
                                                 <constraint firstItem="G0c-SS-CyU" firstAttribute="top" secondItem="0fd-ja-GZB" secondAttribute="top" constant="9" id="Ymk-7P-TQp"/>
                                                 <constraint firstItem="q6d-E9-c6e" firstAttribute="top" secondItem="0fd-ja-GZB" secondAttribute="top" constant="5" id="b0h-8k-8FB"/>
                                                 <constraint firstItem="q6d-E9-c6e" firstAttribute="leading" secondItem="G0c-SS-CyU" secondAttribute="trailing" constant="10" id="iUb-pj-caA"/>
                                                 <constraint firstItem="q6d-E9-c6e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0fd-ja-GZB" secondAttribute="leading" constant="20" symbolic="YES" id="kGQ-Mj-FIW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yxa-88-Flr" secondAttribute="trailing" id="qaa-Kh-gci"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completeGoalView" destination="Yxa-88-Flr" id="0af-vI-OkT"/>
                                             <outlet property="goalLbl" destination="0C0-VX-XAF" id="xyL-Qq-uP4"/>
                                             <outlet property="goalProgressLbl" destination="q6d-E9-c6e" id="pJR-PT-5X0"/>
                                             <outlet property="typeLbl" destination="2HZ-tU-JAi" id="POC-jU-VCL"/>
