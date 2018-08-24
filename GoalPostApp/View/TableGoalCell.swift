@@ -18,9 +18,9 @@ class TableGoalCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(description: String, type: GoalType, progress: Int) {
+    func configureCell(description: String, type: String, progress: Int32) {
         goalLbl.text = description
-        typeLbl.text = type.rawValue
+        typeLbl.text = type
         goalProgressLbl.text = String(describing: progress)
     }
 
