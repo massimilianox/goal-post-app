@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 
 
-// let sharedDelegate = UIApplication.shared.delegate as? AppDelegate
-
 class CreateGoalVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var goalDescription: UITextView!
@@ -30,7 +28,6 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         goalDescription.delegate = self
-        // goalPointsTxtField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardWillChange(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
@@ -74,7 +71,6 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
                 if success {
                     print("Successfully saved data")
                     dismissDetail()
-                    // NotificationCenter.default.post(name: Notification.Name(rawValue: "goalsDataDidUpdate"), object: nil)
                 } else {
                     print("Something went terribly wrong")
                 }

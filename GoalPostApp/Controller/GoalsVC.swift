@@ -20,7 +20,6 @@ class GoalsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // NotificationCenter.default.addObserver(self, selector: #selector(goalsDataDidUpdate), name: Notification.Name("goalsDataDidUpdate"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,8 +27,9 @@ class GoalsVC: UIViewController {
             print("success")
             tableView.reloadData()
             if goals.count > 0 {
-                // print(goals as Any)
                 tableView.isHidden = false
+            } else {
+                tableView.isHidden = true
             }
         }
     }
@@ -63,16 +63,58 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        var tableViewRowActions = [UITableViewRowAction]()
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
+            self.removeGoal(forIndexPath: indexPath)
+            self.fetchData(completion: { (success) in
+                if self.goals.count > 0 {
+                    self.tableView.isHidden = false
+                } else {
+                    self.tableView.isHidden = true
+                }
+            })
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0.9009682801, green: 0.1568627506, blue: 0.2162470031, alpha: 1)
+        
+        tableViewRowActions.append(delete)
+        
+        return tableViewRowActions
+    }
 }
 
 extension GoalsVC {
+    
+    func removeGoal(forIndexPath indexPath: IndexPath) {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let manageContext = delegate.persistentContainer.viewContext
+        
+        manageContext.delete(goals[indexPath.row] as! Goal)
+        
+        do {
+            try manageContext.save()
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+        
+    }
+    
     func fetchData(completion: (_ success: Bool) -> ()) {
         
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let manageContext = delegate.persistentContainer.viewContext
 
-        // guard let manageContext = sharedDelegate?.persistentContainer.viewContext else { return }
-        
         let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
         
         do {
